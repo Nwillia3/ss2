@@ -1,0 +1,40 @@
+<h1>Trainer#show</h1>
+<p>Find me in app/views/trainer/show.html.erb</p>
+
+
+
+<div class="container container-profile">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      
+    </div>
+    <div class="col-sm-8">
+     <h3><%#= sanitize fullname(@user) %></h3>  
+      <p>Profession: <%= @trainer.id %></p>
+      <p>High School: <%= @trainer.age %></p>
+      <p>College: <%= @trainer.height %></p>
+      <p>About me: <%=  @trainer.weight %></p>
+      <%# if trainer_signed_in? %>
+        <p><%#= link_to 'Edit Profile', edit_trainer_registration_path %></p>
+      <% #end %>
+    </div>
+  </div>
+
+  <% if current_trainer %> 
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="divider-line pt-20">My appointments</h3>
+        <% @trainer.appointments.each do |appointment| %>
+          <div class="card">
+            <div class="card-block">
+              <p class="card-title">Title: <%= link_to appointment.location, appointment %></p>
+              <p><%= appointment.app_date %></p> 
+            </div>
+          </div>
+            
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

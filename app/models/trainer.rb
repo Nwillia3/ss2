@@ -3,6 +3,7 @@ class Trainer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
+  # has_many :users
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

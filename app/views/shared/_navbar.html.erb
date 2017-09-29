@@ -21,12 +21,12 @@
           </li>
         <% end %>
         
-        <li>find a trainer<%#= link_to 'Find a trainer', tprofiles_path %></li>
+        <li><%= link_to 'Find a trainer', trainers_path %></li>
 
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.id %>
+              <%= current_user.fullname %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               
