@@ -1,0 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*to fix the fixed nav bar issue */
+#contain{
+	margin-top: 60px;
+}
