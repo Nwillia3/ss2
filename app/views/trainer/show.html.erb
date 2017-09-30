@@ -1,12 +1,10 @@
 <div class="container" id="contain">
   <div class="row">
     <div class="col-sm-4 text-center">
-      <% if @trainer.image.present? %>
-        <%=  image_tag @trainer.image.url(:medium) %>
+      
+      <%=  image_tag @trainer.image.url(:medium) %>
 
-      <% else %>
-        <%= image_tag 'missing.png' %>
-      <% end %>
+     
     </div>
     <div class="col-sm-8">
      <h3><%= @trainer.fullname %></h3>  
@@ -20,7 +18,7 @@
     </div>
   </div>
 
-  <% if current_trainer %> 
+  <%# if current_trainer %> 
     <div class="row">
       <div class="col-sm-12">
         <h3 class="divider-line pt-20">My appointments</h3>
@@ -35,6 +33,6 @@
         <% end %>
       </div>
     </div>
-  <% end %>
+  <%# end %>
 
 </div>

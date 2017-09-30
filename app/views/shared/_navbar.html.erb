@@ -30,7 +30,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               
-              <a class="dropdown-item"> <%#= link_to('Profile', user_profiles_show_path) %></a> <br>
+              <a class="dropdown-item"> </a> <br>
               <a class="dropdown-item"> <%= link_to('Edit Setting', edit_user_registration_path) %></a>
               
             </div>
@@ -45,7 +45,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               
-              <a class="dropdown-item"> <%= link_to('buggin', edit_trainer_registration_path) %></a> <br>
+              <a class="dropdown-item"><%= link_to('Profile', current_trainer)%></a> <br>
               <a class="dropdown-item"> <%= link_to('Edit Setting', edit_trainer_registration_path) %></a>
               
             </div>

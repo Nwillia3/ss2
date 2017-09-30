@@ -18,7 +18,10 @@ Rails.application.routes.draw do
 
 
   # devise_for :users, path: 'users', controllers: { sessions: "users/sessions" etc....}
-  devise_for :trainers, path: 'trainers', controllers: { registration: "trainers/registration" }
+  devise_for :trainers, path: 'trainers', 
+      controllers: { 
+         registrations: 'trainers/registrations'
+      }
 
 # Redirect all other routes to root
   # match '*path', to: 'home#index', via: :all

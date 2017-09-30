@@ -6,6 +6,7 @@ class TrainerController < ApplicationController
   def show
     # @profile = Profile.find(params[:id])
    # @trainer = Trainer.find(current_trainer)
+    @trainer = Trainer.find_by(params[:id])
     @trainer = Trainer.find(params[:id])
     # @user = User.find(current_user.id)
   end
