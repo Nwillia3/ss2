@@ -1,0 +1,25 @@
+<div id="contain" class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>users</h3>
+    </div>
+    <% @user.each do |user| %>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h2 class="card-title"><%= link_to(user.fullname, user_path(user))%></h2>
+            <p class="card-text"><%= user.fitGoal %></p>
+            <p class="card-text"><%= user.age %></p>
+            <p class="card-text"><%= user.height %></p>
+            <p class="card-text"><%= user.weight %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <nav>
+   <ul class="pagination">
+     <%#= will_paginate @questions, class: "container-fluid" %>
+   </ul>
+ </nav>
+</div>
