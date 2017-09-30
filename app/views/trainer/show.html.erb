@@ -1,15 +1,15 @@
-<h1>Trainer#show</h1>
-<p>Find me in app/views/trainer/show.html.erb</p>
-
-
-
-<div class="container container-profile">
+<div class="container" id="contain">
   <div class="row">
     <div class="col-sm-4 text-center">
-      
+      <% if @trainer.image.present? %>
+        <%=  image_tag @trainer.image.url(:medium) %>
+
+      <% else %>
+        <%= image_tag 'missing.png' %>
+      <% end %>
     </div>
     <div class="col-sm-8">
-     <h3><%#= sanitize fullname(@user) %></h3>  
+     <h3><%= @trainer.fullname %></h3>  
       <p>Profession: <%= @trainer.id %></p>
       <p>High School: <%= @trainer.age %></p>
       <p>College: <%= @trainer.height %></p>

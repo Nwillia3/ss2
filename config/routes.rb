@@ -4,17 +4,21 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/supersaiyan', as: 'rails_admin'
   resources :appointments
-  resources :trainers
+  resources :trainer
 
   # get 'trainers/show'
   # get 'trainers/index'
   get 'users/show'
 
-  devise_for :trainers
+  # devise_for :trainers
   devise_for :users
   get 'home/show'
 
   root 'home#index'
+
+
+  # devise_for :users, path: 'users', controllers: { sessions: "users/sessions" etc....}
+  devise_for :trainers, path: 'trainers', controllers: { registration: "trainers/registration" }
 
 # Redirect all other routes to root
   # match '*path', to: 'home#index', via: :all

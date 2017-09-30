@@ -7,6 +7,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.cache_classes = false
 
+  # Paperclip.options[:command_path] = "/usr/local/bin/"
+
   # Do not eager load code on boot.
   config.eager_load = false
 
