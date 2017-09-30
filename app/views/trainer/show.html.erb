@@ -12,13 +12,13 @@
       <p>High School: <%= @trainer.age %></p>
       <p>College: <%= @trainer.height %></p>
       <p>About me: <%=  @trainer.weight %></p>
-      <%# if trainer_signed_in? %>
-        <p><%#= link_to 'Edit Profile', edit_trainer_registration_path %></p>
-      <% #end %>
+      <%if trainer_signed_in? && current_trainer.id == @trainer.id   %>
+        <p><%= link_to 'Edit Profile', edit_trainer_registration_path %></p>
+      <% end %>
     </div>
   </div>
 
-  <%# if current_trainer %> 
+  <% if trainer_signed_in? && current_trainer.id == @trainer.id %> 
     <div class="row">
       <div class="col-sm-12">
         <h3 class="divider-line pt-20">My appointments</h3>
@@ -33,6 +33,9 @@
         <% end %>
       </div>
     </div>
-  <%# end %>
+
+  <% else %>
+    <p><%= link_to('Book appointment ', new_appointment_path) %> with me </p>
+  <% end %>
 
 </div>

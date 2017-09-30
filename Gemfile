@@ -33,6 +33,8 @@ gem 'devise'
 gem "cancan"
 gem 'rails_admin', '~> 1.2'
 gem "paperclip", "~> 5.0.0"
+gem 'stripe'
+
 
 
 group :development, :test do
