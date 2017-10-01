@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get 'trainers/show'
   # get 'trainers/index'
   resources :user
+  resources :charges
 
   # devise_for :trainers
   devise_for :users

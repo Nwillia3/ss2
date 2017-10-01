@@ -8,10 +8,12 @@
     </div>
     <div class="col-sm-8">
      <h3><%= @trainer.fullname %></h3>  
-      <p>Profession: <%= @trainer.id %></p>
-      <p>High School: <%= @trainer.age %></p>
-      <p>College: <%= @trainer.height %></p>
-      <p>About me: <%=  @trainer.weight %></p>
+      <!-- <p>Profession: <%= @trainer.id %></p> -->
+      <p>Age: <%= @trainer.age %></p>
+      <p>Height: <%= @trainer.height %></p>
+      <p>Weight: <%=  @trainer.weight %></p>
+      <p>Bio: <%= @trainer.fitBio %></p>
+      <p>Activity: I work out <%= @trainer.freqWorkOut %> days per week </p>
       <%if trainer_signed_in? && current_trainer.id == @trainer.id   %>
         <p><%= link_to 'Edit Profile', edit_trainer_registration_path %></p>
       <% end %>
