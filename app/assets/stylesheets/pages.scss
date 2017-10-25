@@ -1,0 +1,82 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*FAQ page */
+
+.about-us-page {
+  max-width: 840px;
+  margin: auto;
+  color: #2e363f;
+}
+
+.about-us-links {
+  margin-bottom: 70px;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #d4d9e0;
+}	
+
+.about-us-links li:first-child {
+  text-align: right;
+}
+
+.about-us-links li:last-child {
+  text-align: left;
+}
+
+
+.about-us-links li{
+  display: inline-block;
+  letter-spacing: 3.15px;
+  width: 49%;
+}
+
+.t-smcap {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.about-us-links__link.selected {
+  border-bottom: 5px solid #2e363f;
+}
+
+.about-us-links__link {
+  cursor: pointer;
+  padding: 50px 80px 15px;
+  display: inline-block;
+  text-align: center;
+}
+
+a, a:focus, a:hover {
+    text-decoration: none;
+}
+
+a {
+  color: #2e363f;
+}
+
+
+
+/*Our story page*/
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+
+	.about-us-links__link {
+	    width: 100%;
+	    padding: 40px 0 15px;
+	}
+}
+
+

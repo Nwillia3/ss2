@@ -1,9 +1,14 @@
 
 
 <div id="contain">
-	<h1>New Appointment</h1>
-	<%= render 'form', appointment: @appointment %>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 center">
+					<h2>Book Appointment</h2>
+			</div>
+		</div>
+	</div>
 </div>
 
 
-<%= link_to 'Back', appointments_path %>
+<%= render 'form', appointment: @appointment %>

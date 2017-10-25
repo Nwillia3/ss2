@@ -3,17 +3,24 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/supersaiyan', as: 'rails_admin'
+  
   resources :appointments
   resources :trainer
 
   # get 'trainers/show'
   # get 'trainers/index'
+
   resources :user
   resources :charges
 
-  # devise_for :trainers
+    
+
+  
   devise_for :users
-  get 'home/show'
+  # get 'home/show'
+
+  get 'features/howitworks' 
+  get 'features/fitness' 
 
   root 'home#index'
 

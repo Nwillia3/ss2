@@ -1,7 +1,159 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*to fix the fixed nav bar issue */
-#contain{
-	margin-top: 60px;
+
+
+
+
+/*appointment */
+
+.app_form{
+    background-color: #f0f0f0;
 }
+
+
+/*navbar*/
+
+.navbar-default .navbar-brand {
+    color: #010812;
+    font-size: 30px;
+}
+
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #e7e7e7;
+    padding: 20px 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+    font-size: 16px;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #a2b4c3;
+    
+}
+
+
+
+
+/*to prevent from overlapping with navbar*/
+.image {
+	padding-top:30px;
+	padding-bottom:30px;
+	max-width: 100%;
+}
+
+.center{
+    text-align:center;
+}
+
+#contain{
+	margin-top: 100px;
+}
+
+															/*footer section */
+
+#myFooter {
+    background-color: #0b212f;
+    color: white;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .info{
+    text-align: justify; 
+    color: #a2b4c3;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter .logo{
+    margin-top: 10px;
+}
+
+#myFooter .second-bar .logo a{
+    color:white;
+    font-size: 28px;
+    float: left;
+    font-weight: bold;
+    line-height: 68px;
+    margin: 0;
+    padding: 0;
+}
+
+#myFooter a {
+    color: #cdd4db;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .second-bar {
+    text-align: center;
+    background-color: #33373e;
+    text-align: center;
+}
+
+#myFooter .second-bar a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+}
+
+#myFooter .second-bar a:hover {
+    text-decoration: none;
+}
+
+#myFooter .social-icons {
+    float:right;
+}
+
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .google:hover {
+    color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+
+    #myFooter .info{
+        text-align: center;
+    }
+}
+
+
+
+
+
+

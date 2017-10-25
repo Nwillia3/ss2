@@ -1,76 +1,35 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="glyphicon glyphicon-king"></span>
+        
       </button>
       <a class="navbar-brand" href="/">Saiyan </a>
+      
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-2">
       
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav menu">
         <% if !user_signed_in? && !trainer_signed_in? %>
-          <li>
-              <%= link_to('Become a trainer', new_trainer_registration_path) %> 
-          </li>
-        <% end %>
+          <li class="nav-menu"><%= link_to 'Log In', new_user_session_path %></li>
+          <li class="nav-menu"><%= link_to 'Why chose Saiyan', features_fitness_path %></li>
+          <li class="nav-menu"><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end  %>
+        <% if user_signed_in? && !trainer_signed_in? %>
+
+          <li class="nav-menu"><%= link_to('Explore Trainers', trainer_index_path) %> </li>
+          <li class="nav-menu"><%= link_to('Book appointment', new_appointment_path)%></li>
         
-        <li><%= link_to 'Find a trainer', trainer_index_path %></li>
-        <li><%= link_to 'Find a user', user_index_path %></li>
-
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.fullname %>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              
-              <a class="dropdown-item"><%= link_to('Profile', current_user)%> </a> <br>
-              <a class="dropdown-item"> <%= link_to('Edit Setting', edit_user_registration_path) %></a>
-              
-            </div>
-          </li>
-          
+          <li class="nav-menu"><%= link_to(current_user.fullname, current_user) %></li>
         <% end %>
-
         <% if trainer_signed_in? %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_trainer.fullname %>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              
-              <a class="dropdown-item"><%= link_to('Profile', current_trainer)%></a> <br>
-              <a class="dropdown-item"> <%= link_to('Edit Setting', edit_trainer_registration_path) %></a>
-              
-            </div>
-          </li>
+          <li class="nav-menu"><%= link_to('Explore Trainers', trainer_index_path) %> </li>
 
-        <% end %>
-
-
-
-        <% if !user_signed_in? && !trainer_signed_in?%> 
-          <li>
-              <%= link_to('Sign up', new_user_registration_path) %> 
-          </li>
-          <li>
-              <%= link_to('Sign In', new_user_session_path) %> 
-          </li>     
-        <% end %>
-        <% if user_signed_in? %> 
-           <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %> </li>
-        <% end %>
-        <% if trainer_signed_in? %> 
-           <li><%= link_to('Logout', destroy_trainer_session_path, method: :delete) %> </li>
-        <% end %>
+          <li class="nav-menu"><%= link_to(current_trainer.fullname, current_trainer) %></li>
+        <% end %>       
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
+    </div>  <!-- /.navbar-collapse -->
 </nav><!-- /.navbar -->

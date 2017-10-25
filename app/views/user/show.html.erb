@@ -14,28 +14,27 @@
       <p>About me: <%=  @user.weight %></p>
       <%if user_signed_in? && current_user.id == @user.id   %>
         <p><%= link_to 'Edit Profile', edit_user_registration_path %></p>
+        <p><%= link_to "Logout", destroy_user_session_path, :method => :delete %></p>
+        
       <% end %>
     </div>
   </div>
 
   <% if user_signed_in? && current_user.id == @user.id %> 
     <div class="row">
-      <div class="col-sm-12">
-        <h3 class="divider-line pt-20">My appointments</h3>
+      <div class="col-sm-4">
+        <h3 class="divider-line pt-20">My Appointments</h3>
         <% @user.appointments.each do |appointment| %>
           <div class="card">
             <div class="card-block">
               <p class="card-title">Title: <%= link_to appointment.location, appointment %></p>
-              <p><%= appointment.app_date %></p> 
+              <p><%= appointment.app_date.to_time.strftime('%b %e %Y %l:%M %p')%></p> 
             </div>
           </div>
             
         <% end %>
       </div>
     </div>
-
-  <% else %>
-    <p><%= link_to('Book appointment ', new_appointment_path) %> with me </p>
   <% end %>
 
 </div>

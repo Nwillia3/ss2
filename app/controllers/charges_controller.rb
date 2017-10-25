@@ -22,9 +22,9 @@ class ChargesController < ApplicationController
       if charge.save
         format.html { redirect_to current_user, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appointment }
-      else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @appointment.errors, status: :unprocessable_entity }
       end
     end
 

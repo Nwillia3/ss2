@@ -1,22 +1,29 @@
-<div class="container" id="contain">
-  <div class="row">
-    <div class="col-sm-4 text-center">
-      
-      <%=  image_tag @trainer.image.url(:medium) %>
 
-     
+
+<div class="container" id="contain">
+  <div class="row" id="contain">
+    <div class="col-md-6">
+      <div class="card" style="width: 20rem;">
+        <div class="card-img-top image">
+           <%= image_tag @trainer.image.url(:large) %>
+       
+        </div>
+      </div>
     </div>
-    <div class="col-sm-8">
-     <h3><%= @trainer.fullname %></h3>  
-      <!-- <p>Profession: <%= @trainer.id %></p> -->
-      <p>Age: <%= @trainer.age %></p>
-      <p>Height: <%= @trainer.height %></p>
-      <p>Weight: <%=  @trainer.weight %></p>
-      <p>Bio: <%= @trainer.fitBio %></p>
-      <p>Activity: I work out <%= @trainer.freqWorkOut %> days per week </p>
-      <%if trainer_signed_in? && current_trainer.id == @trainer.id   %>
-        <p><%= link_to 'Edit Profile', edit_trainer_registration_path %></p>
-      <% end %>
+    <div class="col-md-6">   
+      <div class="card-block">
+        <h4 class="card-title"><%= @trainer.fullname %></h4>
+        <p class="card-text"><%= @trainer.fitBio %></p>
+        <p class="card-text"><%= @trainer.age %></p>
+        <p class="card-text"><%= @trainer.height %></p>
+        <p class="card-text"><%= @trainer.weight %></p>
+        <p class="card-text">Activity: I work out <%= @trainer.freqWorkOut %> days per week</p>
+        <%if trainer_signed_in? && current_trainer.id == @trainer.id   %>
+            <p><%= link_to 'Edit Profile', edit_trainer_registration_path %></p>
+            <p><%= link_to "Logout", destroy_trainer_session_path, :method => :delete %></p>
+          <% end %>
+        <%= link_to 'Book appointment', new_appointment_path, class: "btn btn-primary" %> 
+      </div>
     </div>
   </div>
 
@@ -37,7 +44,7 @@
     </div>
 
   <% else %>
-    <p><%= link_to('Book appointment ', new_appointment_path) %> with me </p>
+    <%= link_to 'Book appointment', new_appointment_path, class: "btn btn-primary" %> 
   <% end %>
 
 </div>

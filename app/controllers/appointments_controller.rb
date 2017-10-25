@@ -29,12 +29,14 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
-        format.html { redirect_to new_charge_path, notice: 'Appointment will be complete after payment.' }
+        format.html { redirect_to root_path, notice: 'Appointment will be complete after payment.' }
         format.json { render :show, status: :created, location: @appointment }
       else
         format.html { render :new }
         format.json { render json: @appointment.errors, status: :unprocessable_entity }
       end
+      # format.html { redirect_to new_charge_path, notice: 'Appointment will be complete after payment.' }
+        
     end
   end
 

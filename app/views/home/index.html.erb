@@ -1,7 +1,35 @@
 <div id="contain">
-	<h1>Home#index</h1>
-	<p>Find me in app/views/home/index.html.erb</p>
+	<div class="jumb">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-sm-6">
+  				<h2 id="home-motto">Your most affordable and flexible fitness membership. Ever.</h2>
+  				<br>
+  				<h4 id="home-motto2">Finally, a fitness membership that brings variety into your work out routine. The best classes,studios and instructors, all bookable now.</h4> <br>
+  				<div id='button'>
+  					<% if !user_signed_in? %>
+  						<%= link_to 'Explore Saiyan', features_fitness_path, class: "btn btn-primary  btn-lg" %>
+  					<% else %> 
+  						<%= link_to 'Book Appointment', new_appointment_path, class: "btn btn-primary  btn-lg" %>
+  					<% end %>
+  				</div>
+  				
+  			</div>
+  			<div class="col-sm-6">
+  				<div class="jumbo">
+  					<%= image_tag( "home/workout.png") %>
 
-	<%= link_to 'New Appointment', new_appointment_path %>
-
+  					<style>
+  						.jumbo{
+  							margin-right: 50px;
+  						}
+  					</style>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+	</div>
 </div>
+
+
+
