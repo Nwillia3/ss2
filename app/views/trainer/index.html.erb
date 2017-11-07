@@ -1,36 +1,40 @@
 <div id="contain" class="container">
-  <div>
-    <h1> some nice text here</h1>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>Trainers</h3>
-    </div>
-    <% @trainer.each do |trainer| %>
-      <div class="col-md-4 col-sm-6 center">
-        <div class="card" style="width: 20rem;">
-          <div class="card-img-top image">
-             <%= image_tag trainer.image.url(:medium) %>
-         
-          </div>
-          
-          <div class="card-block">
-            <h4 class="card-title"><%= link_to(trainer.fullname, trainer_path(trainer))%></h4>
-            <!-- <p class="card-text"><%= trainer.fitBio %></p> -->
-            <p class="card-text"> <b>Age: </b><%= trainer.age %></p>
-            <p class="card-text"><b>Height: </b> <%= trainer.height %></p>
-            <p class="card-text"><b> Weight: </b> <%= trainer.weight %></p> 
-            <%= link_to 'view profile', trainer_path(trainer), class: 'btn btn-primary' %>
+  <!-- <div>
+    <h1> some nice text here ( Add training style to profile)</h1>
+  </div> -->
+  <div class="Saiyan-box">
+    <div class="row">
+      <!-- <div class="col-sm-12">
+        <h3>Trainers</h3>
+      </div> -->
+      <% @trainer.each do |trainer| %>
+        <div class="col-md-4 col-sm-6 center">
+          <div class="card" style="width: 20rem;">
+            <div class="card-img-top image">
+               <%=  image_tag (trainer.image.url(:medium)) %>
+            </div>
+            
+            <div class="card-block">
+              <h4 class="card-title"><%= link_to(trainer.fullname, trainer_path(trainer))%></h4>
+              
+              <ul class="trainer-info">
+                <li><b>Age: </b><%= trainer.age %></li>
+                <li><b>Height: </b> <%= trainer.height %></li>
+                <li><b> Weight: </b> <%= trainer.weight %></li>
+              </ul>
+             
+              <%= link_to 'view profile', trainer_path(trainer), class: 'btn btn-primary' %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <nav>
+  <!-- <nav>
    <ul class="pagination">
      <%#= will_paginate @questions, class: "container-fluid" %>
    </ul>
- </nav>
+ </nav> -->
 </div>
 
 

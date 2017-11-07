@@ -1,83 +1,161 @@
+<style>
+  .blk{
+    list-style: none;
+  }
+
+  
+
+  .blk #blk{
+    padding-top: 30px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-style: 
+  }
+
+  .blk h2 {
+    text-align: center;
+    /*padding-left: 10px;*/
+  }
+
+</style>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-12 app_form">
-      <div class="">
-        <%= form_for(appointment) do |f| %>
-          <% if appointment.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+    <div class=" col-sm-6 col-md-6 blk">
+      <h2>Where the Magic happens</h2>
 
-              <ul>
-              <% appointment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Crown Heights</li>
+        <li>250 Utica Ave</li>
+      </div>
 
-          <form class="form-horizontal">
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="form-group">
-                  <label><%= f.label :Date, :class => "col-md-12 control-label" %><br /></label>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Gates</li>
+        <li>1002 Gates Ave</li>
+      </div>
 
-                  <%= f.datetime_select :app_date, {ampm: true, order: [:month, :day] }, { class: "form-control input-lg" } %> 
-                </div>
-              </div>
-              
-            </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Bed-Stuy</li>
+        <li>1413 Fulton St</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Bushwick</li>
+        <li>399 Knickerbocker Ave</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Williamsburg</li>
+        <li> 287 Broadway</li>
+      </div>
 
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="form-group">
-                  <label><%= f.label :location, :class => "col-md-12 control-label" %><br /></label>
-                  <%= f.text_field :location, autofocus: true, :class => 'form-control input-sm', :placeholder => "Blink fitness at ....." %>
-                </div>
-              </div>
-            </div>
+      <!-- <h1>Manhattan</h1> -->
 
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <div class="form-group">
-                  <label><%= f.label :trainer_id, :class => "col-md-4 control-label" %><br /></label>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness East Village</li>
+        <li> 98 Avenue A</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Nassau St.</li>
+        <li>111 Nassau St</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Noho</li>
+        <li>16 E 4th St</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness Murray Hill</li>
+        <li>600 3rd Ave</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness 116th</li>
+        <li> 27 W 116th St</li>
+      </div>
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Blink Fitness 125th Street</li>
+        <li>301 W 125th St</li>
+      </div>
 
-                  <%= select("appointment", "trainer_id", Trainer.all.collect {|p| [ p.fullname, p.id ] }) %>
-                </div>
-              </div>
-            </div>
-
-            <!-- <div class="field">
-              <%#= f.label :user_id %><br>
-              <%#= select("appointment", "user_id", User.all.collect {|p| [ p.fullname, p.id ] }) %>
-            </div> 
-                , autofocus: true, :class => 'form-control input-md'
+      <div class="col-xs-6 col-md-6 ">
+        <li id ="blk">Your Home </li>
+        <li>Your Location</li>
+      </div>
 
 
-          -->
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2">
-                <div class="form-group">
-                  <%= f.submit class: "btn btn-lg btn-primary col-sm-8 col-sm-offset-2 col-xs-12" %>
-                </div>
-              </div>
-            </div>
+     
+    </div>
 
-            <!-- Used to create space for the bottom of the form -->
-            <div class="row"> <!--  Change this with padding bottom -->
-              <div class="col-sm-8 col-sm-offset-2">
-                <div class="form-group">
-                  
-                </div>
+    <div class="col-sm-6 col-md-6">
+      <h2>Book Appointment</h2>
+      <%= form_for(appointment) do |f| %>
+        <% if appointment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+            <ul>
+            <% appointment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <form class="form-horizontal">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+              <div class="form-group">
+                <label><%= f.label :Date, :class => "col-md-12 control-label" %></label>
+
+                <%= f.datetime_select :app_date, {ampm: true, order: [:month, :day] }, { class: "form-control input-md" } %> 
               </div>
             </div>
             
-          </form>
+          </div>
 
-    
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+              <div class="form-group">
+                <label><%= f.label :location, :class => "col-md-12 " %></label>
 
-        <% end %>
+                <%= f.text_field :location, autofocus: true, :class => 'form-control input-md'%>
+              </div>
+            </div>
+          </div> 
+                    <!-- , :placeholder => "Blink fitness at ....."  -->
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+              <div class="form-group">
+                <label><%= f.label :trainer, :class => "col-md-4 control-label" %><br /></label>
 
-      </div>
+                <%= select("appointment", "trainer_id", Trainer.all.collect {|p| [ p.fullname, p.id ] }) %>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="field">
+            <%#= f.label :user_id %><br>
+            <%#= select("appointment", "user_id", User.all.collect {|p| [ p.fullname, p.id ] }) %>
+          </div> 
+              , autofocus: true, :class => 'form-control input-md'
+
+
+        -->
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="form-group">
+                <%= f.submit class: "btn btn-lg btn-primary col-sm-8 col-sm-offset-2 col-xs-12" %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Used to create space for the bottom of the form -->
+          <div class="row"> <!--  Change this with padding bottom -->
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="form-group">
+                
+              </div>
+            </div>
+          </div>   
+        </form>
+      <% end %>
     </div>
   </div>
 </div>

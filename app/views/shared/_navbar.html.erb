@@ -6,6 +6,7 @@
         <span class="glyphicon glyphicon-king"></span>
         
       </button>
+    
       <a class="navbar-brand" href="/">Saiyan </a>
       
     </div>
@@ -15,7 +16,7 @@
       <ul class="nav navbar-nav menu">
         <% if !user_signed_in? && !trainer_signed_in? %>
           <li class="nav-menu"><%= link_to 'Log In', new_user_session_path %></li>
-          <li class="nav-menu"><%= link_to 'Why chose Saiyan', features_fitness_path %></li>
+          <li class="nav-menu"><%= link_to 'Why chose Saiyan', features_howitworks_path %></li>
           <li class="nav-menu"><%= link_to 'Sign Up', new_user_registration_path %></li>
         <% end  %>
         <% if user_signed_in? && !trainer_signed_in? %>

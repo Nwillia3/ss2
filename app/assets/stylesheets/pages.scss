@@ -4,7 +4,7 @@
 
 
 
-/*FAQ page */
+
 
 .about-us-page {
   max-width: 840px;
@@ -13,7 +13,7 @@
 }
 
 .about-us-links {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   padding: 0;
   list-style: none;
   border-bottom: 1px solid #d4d9e0;
@@ -63,20 +63,120 @@ a {
 }
 
 
+@media only screen and (max-width: 768px){
 
-/*Our story page*/
+  .about-us-links__link {
+      width: 100%;
+      padding: 40px 0 15px;
+  }
+
+  .about-us-links {
+    margin-bottom: 40px;
+  }
+
+}
+/*FAQ page */
 
 
 
+
+.faq-text{
+  padding: 20px 15px 60px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: .05em;
+ }
+
+ .HIW{
+    text-align: center;
+ }
+
+.faq-text h3{
+  font-size: 24px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  text-align: center;
+}
 
 
 
 @media only screen and (max-width: 768px){
+  .faq-text h3{
+    font-size: 20px;
+  }
 
-	.about-us-links__link {
-	    width: 100%;
-	    padding: 40px 0 15px;
-	}
+  .HIW-text{
+    text-align: center;
+  }
 }
+
+
+
+
+
+
+/*Our story page*/
+
+
+.action {
+  text-align: center;
+  padding: 30px 10px;
+  background-color: black;
+  color: white;
+  }
+
+.action a {
+  color: white;
+}
+
+.howitwork-text{
+  padding: 30px 15px 60px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: .05em;
+ }
+
+/*bolded text*/
+#text1{
+  font-size: 20px;
+}
+
+
+.howitwork-text p{
+  padding-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 768px){
+  .howitwork-text{
+    padding: 20px 15px 60px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: .05em;
+   }
+  #text1{
+    font-size: 18px;
+  }
+
+  .faq-text{
+    padding: 20px 15px 60px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: .05em;
+   }
+  
+}
+
+
+
+
+
+
+
 
 

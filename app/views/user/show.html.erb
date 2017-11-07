@@ -7,33 +7,58 @@
      
     </div>
     <div class="col-sm-8">
-     <h3><%= @user.fullname %></h3>  
-      <p>Profession: <%= @user.id %></p>
-      <p>High School: <%= @user.age %></p>
-      <p>College: <%= @user.height %></p>
-      <p>About me: <%=  @user.weight %></p>
-      <%if user_signed_in? && current_user.id == @user.id   %>
-        <p><%= link_to 'Edit Profile', edit_user_registration_path %></p>
-        <p><%= link_to "Logout", destroy_user_session_path, :method => :delete %></p>
+      <div class="user_profile">
+        <div class="row">
+
+          <div class="col-md-12 ">
+            <h2><%= @user.fullname %></h2>  
+          </div>
+
+          <div class="col-xs-6 col-sm-6 col-md-12 ">
+            <h4>Height:</h4>
+            <p><%= @user.height %></p> 
+          </div>
+
+          <div class="col-xs-6 col-sm-6 col-md-12 ">
+            <h4>Weight: </h4>
+            <p><%=  @user.weight %> lbs</p>
+          </div>
+
+          <div class="col-md-12 ">
+            <h4>My Fitness Goal: </h4>
+            <p> <%=  @user.fitGoal %></p> <br>
+          </div>
+
+
+
+          <div class="col-md-12 ">
+            <%if user_signed_in? && current_user.id == @user.id   %>
+              <p> <b><%= link_to 'Edit Profile', edit_user_registration_path %> |
+              <%= link_to "Logout", destroy_user_session_path, :method => :delete %></b></p>
+            <% end %>
+          </div>
+        </div>
         
-      <% end %>
+      </div>
+     
     </div>
   </div>
 
   <% if user_signed_in? && current_user.id == @user.id %> 
     <div class="row">
-      <div class="col-sm-4">
-        <h3 class="divider-line pt-20">My Appointments</h3>
-        <% @user.appointments.each do |appointment| %>
-          <div class="card">
-            <div class="card-block">
-              <p class="card-title">Title: <%= link_to appointment.location, appointment %></p>
-              <p><%= appointment.app_date.to_time.strftime('%b %e %Y %l:%M %p')%></p> 
-            </div>
+      
+      <h3 class="app-history-title">My Appointments History</h3>
+      <% @user.appointments.each do |appointment| %>
+        <div class="col-xs-6 col-sm-3">
+          <div class="app_history">
+            <p> <b>Date:</b> <br><%= link_to appointment.app_date.to_time.strftime('%b %e %Y %l:%M %p'), appointment %></p>
+            <p><b>Location:</b> <br><%= appointment.location %></p>
+            <p><b>Trainer:</b> <br><%= appointment.trainer.fullname %></p>
           </div>
-            
-        <% end %>
-      </div>
+          <br>
+        </div>
+          
+      <% end %>
     </div>
   <% end %>
 

@@ -2,6 +2,9 @@
   <div class="row"> 
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
       <h2>Welcome Back!</h2>
+
+      <h4><%= link_to 'Trainer Login', new_trainer_session_path %></h4>
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <form class="form-horizontal">
           <div class="form-group">
@@ -11,7 +14,6 @@
 
           <div class="form-group">
             <label><%= f.label :password, :class => "col-md-4 control-label" %></label>
-            
             <%= f.password_field :password, autocomplete: "off", :class => 'form-control input-md', :placeholder => "Password" %>
           </div>
 
@@ -27,7 +29,6 @@
           </div>  
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

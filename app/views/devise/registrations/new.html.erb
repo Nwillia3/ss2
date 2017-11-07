@@ -26,7 +26,7 @@
             <div class="col-xs-6 col-sm-6 col-md-6">
               <div class="form-group">
                 <label><%= f.label :weight, :class => "col-md-4 control-label" %><br /></label>
-                <%= f.text_field :weight, autofocus: true, :class => 'form-control input-md', :placeholder => "Please enter your current weight"  %>
+                <%= f.text_field :weight, autofocus: true, :class => 'form-control input-md', :placeholder => "Enter your current weight"  %>
               </div>
             </div>
           </div>  
@@ -54,7 +54,7 @@
           </div>
         </form>
       <% end %>
-      <h4>Already have an account<button class="btn btn-info"><%= render "devise/shared/links" %></button></h4>
+      <h4>Already have an account  <button class="btn btn-primary"><%= render "devise/shared/links" %></button></h4>
     </div>
   </div>
 </div>
